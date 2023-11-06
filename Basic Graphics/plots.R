@@ -24,3 +24,7 @@ plot(dnorm, -5, +5,
     main = "Standard Normal Distribution",
     xlab = "z-scores",
     ylab = "Density")
+
+detach("package:datasets", unload = TRUE)
+dev.off()
+cat("\014")
