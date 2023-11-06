@@ -136,3 +136,18 @@ plot(dnorm, -3, +3)      #Bell curve
         * Strong
         * Moderate
         * Weak
+
+### Bar charts with `barplot()`
+```
+For example:
+library(datasets)
+
+cylinders <- table(mtcars$cy)
+barplot(cylinders)
+plot(cylinders)
+```
+
+**_NOTE_**:
+* Bar graphs are the most basic graph for most basic data.
+* Before plotting the bar graph its essential to clean the data, this can be done by creating a seperate table.
+* `table()` creates a frequency table having 2 columns: a) one of frequency b) second of parameter passed to the function.
