@@ -138,6 +138,7 @@ plot(dnorm, -3, +3)      #Bell curve
         * Weak
 
 ### Bar charts with `barplot()`
+These are used with categorical variables
 ```
 For example:
 library(datasets)
@@ -151,3 +152,34 @@ plot(cylinders)
 * Bar graphs are the most basic graph for most basic data.
 * Before plotting the bar graph its essential to clean the data, this can be done by creating a seperate table.
 * `table()` creates a frequency table having 2 columns: a) one of frequency b) second of parameter passed to the function.
+
+### Histograms with `hist()`
+These are used with quantitative variables
+* Basic histograms
+```
+For example:
+hist(iris$Petal.Length)
+hist(iris$Petal.Width)
+```
+
+* Histogram with options
+```
+hist(iris$Petal.Width [iris$Species == "setosa"],
+     xlim = c(0, 3),
+     xlab = "",
+     breaks = 9,                                    #Specifies bins/buckets
+     main = "Iris: Petal Width in setosa",
+     col = "blue")
+
+hist(iris$Petal.Width [iris$Species == "virginica"],
+     xlim = c(0, 3),
+     xlab = "",
+     breaks = 9,
+     main = "Iris: Petal widht in virginica",
+     col = "purple")
+```
+
+**_NOTE_**:
+* basic histograms are plotted for <parameter passed> vs frequency
+* mfrow stands for "multi frame row" which is a parameter and is used to set the layout whose initial value is (1,1) i,e only one row and one column for showing graphs. Its good practice to set it to its default value towards the end of the script.
+* To set mfrow use `param(mfrow = c(3,1))` where `c()` is a vector creation function and par method is used to set graphical parameters.
