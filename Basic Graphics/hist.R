@@ -12,6 +12,7 @@ hist(iris$Petal.Length)
 par(mfrow = c(3, 1))
 
 # Showing 3 different graphs
+# [iris$Species == "setosa"] and alike in the following examples are called selectors
 hist(iris$Petal.Width [iris$Species == "setosa"],
      xlim = c(0, 3),
      breaks = 9,
@@ -32,3 +33,7 @@ hist(iris$Petal.Width [iris$Species == "virginica"],
      breaks = 9,
      main = "Petal.Width for Virginica",
      col = "purple")
+
+par(mfrow = c(1, 1))
+detach("package:datasets", unload = TRUE)
+dev.off()

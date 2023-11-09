@@ -136,6 +136,7 @@ plot(dnorm, -3, +3)      #Bell curve
         * Strong
         * Moderate
         * Weak
+    * Used for both quantitative variable
 
 ### Bar charts with `barplot()`
 These are used with categorical variables
@@ -175,11 +176,36 @@ hist(iris$Petal.Width [iris$Species == "virginica"],
      xlim = c(0, 3),
      xlab = "",
      breaks = 9,
-     main = "Iris: Petal widht in virginica",
+     main = "Iris: Petal width in virginica",
      col = "purple")
 ```
 
 **_NOTE_**:
-* basic histograms are plotted for <parameter passed> vs frequency
+* basic histograms are plotted for `parameter passed` vs frequency
 * mfrow stands for "multi frame row" which is a parameter and is used to set the layout whose initial value is (1,1) i,e only one row and one column for showing graphs. Its good practice to set it to its default value towards the end of the script.
-* To set mfrow use `param(mfrow = c(3,1))` where `c()` is a vector creation function and par method is used to set graphical parameters.
+* To set mfrow use `param(mfrow = c(3,1))` where `c()` is a vector creation function and `par()` is used to set graphical parameters.
+
+### Scatter Plots with `plot()`
+
+* It is used to visualize assosciation between 2 quantitative variable
+
+```
+#Basic Command
+plot(mtcars$wt, mtcars$mpg)     #Explanatory var on X axis and Response var on Y axis
+
+#With options
+plot(mtcars$wt, mtcars$mpg,
+     pch = 19,
+     xlab = "mtcars$wt",
+     ylab = "mtcars$mpg",
+     main = "Scatter Plots",
+     cex = 1.5,
+     col = "blue")
+```
+
+**_NOTE_**
+* It used to understand the following data:
+    * Linear
+    * Spread
+    * Outliers
+    * Correlation
