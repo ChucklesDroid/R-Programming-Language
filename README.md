@@ -230,7 +230,8 @@ curve(dnorm(lynx, mean = mean(lynx), sd = sd(lynx)),
 
 The above code creates a histogram of number of lynx captured against its probability distribution. Also suggested number of bins = 14.
 
-## Summary Function
+## Descriptive Summary of packages
+### Using `summary()`
 `summary()` gives min, max, median, 1st quartile, 3rd quartile and mean values for the parameter passed.
 
 ```
@@ -245,3 +246,28 @@ summary(iris.Species)           #Categorical Variable
 Eg: 
 summary(iris)                   #Entire Data Frame
 ```
+
+### Using `describe()`
+This function is present in the `pysch` package. To load and install psych package make use of `pacman`:
+```
+For eg:
+pacman:p_load(pacman, psych)
+p_help(psych)                   #Gives pdf documentation on web using pacman
+p_help(psych, web = F)          #This loads it in the RStudio itself
+describe(iris$Petal.Length)     #Quantitative Variable
+describe(iris)                  #Entire Data Frame
+```
+
+By running `describe` we will get the following information:
+1) n (Sample Size)
+2) mean (Mean)
+3) SD (Standard Deviation)
+4) 10% Trimmed Mean
+5) MAD  (Median Absolute Deviation)
+6) min/max
+7) range
+8) skewness
+9) kurtosis
+10) SE (Standard Errors)
+
+**_NOTE_** This is only for quantitative variables
