@@ -209,3 +209,39 @@ plot(mtcars$wt, mtcars$mpg,
     * Spread
     * Outliers
     * Correlation
+
+## Overlaying Plots
+To overlay plots make use of `curve()` to achieve this with parameter `add = TRUE`
+
+```
+For eg:
+hist(lynx, 
+     col = "thistle1",
+     freq = FALSE,                                #Histogram is plotted against probability distribution
+     breaks = 14,
+     xlab = "Number of lynx trapped",
+     main = "Histogram of annual canadian lynx trappings 1821-1934")
+
+curve(dnorm(lynx, mean = mean(lynx), sd = sd(lynx)),
+            col = "thistle4",
+            lwd = 2,
+            add = TRUE)
+```
+
+The above code creates a histogram of number of lynx captured against its probability distribution. Also suggested number of bins = 14.
+
+## Summary Function
+`summary()` gives min, max, median, 1st quartile, 3rd quartile and mean values for the parameter passed.
+
+```
+For eg:
+summary(iris.Sepal.Length)      #Quantitative Variable
+summary(iris.Species)           #Categorical Variable
+```
+
+**_NOTE_**
+* If its the entire data frame(i.e table having several columns) then it will calculate all the above values seperately for each columns. 
+```
+Eg: 
+summary(iris)                   #Entire Data Frame
+```
