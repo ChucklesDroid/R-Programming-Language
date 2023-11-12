@@ -1,7 +1,16 @@
-# Motivation for Learning R
+# Table of Contents
+1. [Introduction](#Introduction)
+2. [Running R files through terminal](#Para1)
+3. [Loading and unloading packages](#Para2)
+4. [Plotting Data](#Para3)
+5. [Overlaying Plots](#Para4)
+6. [Descriptive Summary of packages](#Para5)
+7. [Data Formats in R Programming Language](#Para6)
+
+## Motivation for Learning R <a name="Introduction"></a>
 This is to help with contributing to KEcoLab tool which helps in measuring Software Energy consumption.
 
-## Running R files through terminal
+## Running R files through terminal <a name="Para1"></a>
 * To run files which do not include any graphs, we make use of Rscript. 
 ```
 For Example:
@@ -19,7 +28,7 @@ For Example:
 * Use radian instead of R which is a lot more user friendlier
 * Also make use of Rstudio whenever possible
 
-## Loading and unloading packages
+## Loading and unloading packages<a name="Para2"></a>
 ### Loading Packages
 There are 2 types of packages:-
 
@@ -62,7 +71,7 @@ p_unload(all) #To unload all packages
 p_unload(httr tidyr) #To unload specific packages
 ```
 
-## Plotting data
+## Plotting data <a name="Para3"></a>
 ### With `plot()`
 * The basic most command is the `plot` command which is basic X-Y plotting.
 * `plot` command adapts to data types and the number of variables you are dealing with.
@@ -210,7 +219,7 @@ plot(mtcars$wt, mtcars$mpg,
     * Outliers
     * Correlation
 
-## Overlaying Plots
+## Overlaying Plots <a name="Para4"></a>
 To overlay plots make use of `curve()` to achieve this with parameter `add = TRUE`
 
 ```
@@ -230,7 +239,7 @@ curve(dnorm(lynx, mean = mean(lynx), sd = sd(lynx)),
 
 The above code creates a histogram of number of lynx captured against its probability distribution. Also suggested number of bins = 14.
 
-## Descriptive Summary of packages
+## Descriptive Summary of packages <a name = "Para5"></a>
 ### Using `summary()`
 `summary()` gives min, max, median, 1st quartile, 3rd quartile and mean values for the parameter passed.
 
@@ -294,4 +303,25 @@ head(i.setosa)
 summary(i.setosa)
 hist(i.setosa$Petal.Length)
 ```
-    Since we leave column empty we select all the columns in the above example
+Since we leave column empty we select all the columns in the above example
+
+## Data Formats in R Programming Language <a name="Para6"></a>
+There are 2 main concepts while learning about data formats in R:
+* Data Types 
+* Data Structures
+
+Data Types can be of 5 different types:-
+* Numeric (integer, single and double)
+* Logical
+* Character
+* Complex
+* Raw
+
+Data Structures can be majorly of 5 different types:-
+* Vector
+* Matrix
+* Array
+* Data Frame
+* List
+
+Check usage examples in `Data Formats/dataformats.R`
