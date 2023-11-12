@@ -19,3 +19,6 @@ i.setosa <- iris$Sepal.Length[iris$Sepal.Length < 5.2 &
 hist(i.setosa)
 summary(i.setosa)
 head(i.setosa)
+
+rm(list = ls())
+detach("packages:dataframes", unload = TRUE)
