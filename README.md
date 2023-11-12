@@ -271,3 +271,27 @@ By running `describe` we will get the following information:
 10) SE (Standard Errors)
 
 **_NOTE_** This is only for quantitative variables
+
+## Selecting Cases
+We can make use of selector to achieve this.
+* Select by category
+```
+hist(iris$Petal.Length[iris$Species == "setosa"])
+```
+* Select by Value
+```
+hist(iris$Petal.Width[iris$Petal < 5.2])
+```
+* Multiple selectors
+```
+hist(iris$Petal.Length[iris$Petal.Length > 2 & 
+    iris$Petal.Species == "setosa"])
+```
+* We can also create sub samples in case the same data is being utilised multiple times
+```
+i.setosa <- iris[iris$Petal.Length > 2,]     #This specifies a condition for rows but selects all columns
+head(i.setosa)
+summary(i.setosa)
+hist(i.setosa$Petal.Length)
+```
+    Since we leave column empty we select all the columns in the above example
