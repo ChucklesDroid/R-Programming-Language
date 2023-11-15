@@ -6,6 +6,7 @@
 5. [Overlaying Plots](#Para4)
 6. [Descriptive Summary of packages](#Para5)
 7. [Data Formats in R Programming Language](#Para6)
+8. [Factors](#Para7)
 
 ## Motivation for Learning R <a name="Introduction"></a>
 This is to help with contributing to KEcoLab tool which helps in measuring Software Energy consumption.
@@ -325,3 +326,17 @@ Data Structures can be majorly of 5 different types:-
 * List
 
 Check usage examples in `Data Formats/dataformats.R`
+
+## Factors <a name="Para7"></a>
+In R programming language factors are a special type of data structure that are
+used to represent categorical variables.
+* These are values that can only take finite number of values such as gender, 
+species or color.
+* Factors are stored as integers but they are assosciated with labels that correspond
+to unique values of the variable.
+* Levels of a factor refer to the distinct values or categories that a factor can take on. Each level is assosciated with a integer code and order of the level is determined by the order in which they are specified when creating the factor.
+
+Check usage examples in `Factors/factors.R` 
+
+**_NOTE_**:
+* `str()` is used to give the structure of data structure passed in as argument.
