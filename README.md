@@ -8,6 +8,7 @@
 7. [Data Formats in R Programming Language](#Para6)
 8. [Factors](#Para7)
 9. [Entering Data](#Para8)
+10. [Importing Data](#Para9)
 
 ## Motivation for Learning R <a name="Introduction"></a>
 This is to help with contributing to KEcoLab tool which helps in measuring Software Energy consumption.
@@ -351,3 +352,35 @@ Several methods can be used to enter data in R. Following are some of these meth
 * `rep()`
 
 Check usage examples in `Data/enter.R`
+
+## Importing Data <a name="Para9"></a>
+To import data we can make use of `pkg rio` or use default R methods as well
+
+* `import` method is used to import csv, txt and xlsx files. It is part of rio pkg.
+* `read.csv()` and `read.table()` are used to read csv files and spreadsheet that has been saved as tab seperated txt files respectively.
+
+```
+For Example using rio pkg:
+pacman::p_load(pacman, rio)
+# CSV file
+rio_csv <- import("/Path to csv file")
+head(rio_csv)
+# TXT file
+rio_txt <- import("/Path to txt file")
+head(rio_txt)
+# Excel file
+rio_xlsx <- import("/Path to excel file")
+head(rio_xlsx)
+
+# Data Viewer
+View(rio_csv)   #This is R's environment function
+
+# R's built-in functions
+# For reading spreadsheets saved as tab delimited text files
+r_txt = read.table("/path to txt file", header = TRUE, sep = "\t")
+
+# For csv files
+r_csv = read.csv("/Path to csv file", header = TRUE)
+```
+**_NOTE_**:
+* `read.table()` gives an error on missing data but works on complete data.
