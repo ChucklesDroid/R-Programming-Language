@@ -7,6 +7,7 @@
 6. [Descriptive Summary of packages](#Para5)
 7. [Data Formats in R Programming Language](#Para6)
 8. [Factors](#Para7)
+9. [Entering Data](#Para8)
 
 ## Motivation for Learning R <a name="Introduction"></a>
 This is to help with contributing to KEcoLab tool which helps in measuring Software Energy consumption.
@@ -340,3 +341,13 @@ Check usage examples in `Factors/factors.R`
 
 **_NOTE_**:
 * `str()` is used to give the structure of data structure passed in as argument.
+
+## Entering Data <a name="Para8"></a>
+Several methods can be used to enter data in R. Following are some of these methods:
+* colon operator
+* `seq()`
+* `c()`
+* `scan()`
+* `rep()`
+
+Check usage examples in `Data/enter.R`
