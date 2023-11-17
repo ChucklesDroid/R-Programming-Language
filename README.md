@@ -9,6 +9,7 @@
 8. [Factors](#Para7)
 9. [Entering Data](#Para8)
 10. [Importing Data](#Para9)
+11. [Modelling Data](#Para10)
 
 ## Motivation for Learning R <a name="Introduction"></a>
 This is to help with contributing to KEcoLab tool which helps in measuring Software Energy consumption.
@@ -384,3 +385,43 @@ r_csv = read.csv("/Path to csv file", header = TRUE)
 ```
 **_NOTE_**:
 * `read.table()` gives an error on missing data but works on complete data.
+
+## Modelling Data <a name="Para10"></a>
+### Hierarchical Clustering
+* In our use case we are keeping it simple and making use of:
+    * Euclidean distance for measure of distance
+    * Hierarichal Clustering using divisive method
+
+```
+For Example:
+data <- cars %<%
+        dist %<%
+        hclust
+
+plot(data)
+
+rect.hclust(data, k = 2, border = "gray")
+rect.hclust(data, k = 3, border = "blue")
+rect.hclust(data, k = 4, border = "green4")
+rect.hclust(data, k = 5, border = "darkred")
+```
+
+**_NOTE_**
+
+* Heirarichal Clustering is the method of cluster analysis that seeks to build a hierarchy of clusters.
+
+* There are 2 main types of Hierarchical Clustering:
+    * Divisive: This is a top down approach which starts by placing all data points into a single cluster and then it repeatedly splits the cluster into smaller clusters until each data point is in its own cluster.
+
+    * Agglomerative: This is a bottom up approach which starts by treating each data point as a seperate cluster. Then it repeatedly merges the most similar clusters until only a single cluster remains.
+
+* Hierarchical clustering is often visualised using a dendrogram
+
+* We have choices in the following matters:
+    * Heirarchical vs Set k
+    * Measures of Distance
+    * Divisive vs Agglomerative
+
+* Both Hierarchical and Set K( K means clusterring) are unsupervised machine learning algorithms that are used to group data points into clusters. However there are some key differences b/w the two.
+
+* Common measures of distance include euclidean distance.
