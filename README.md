@@ -3,8 +3,14 @@
 2. [Running R files through terminal](#Para1)
 3. [Loading and unloading packages](#Para2)
 4. [Plotting Data](#Para3)
+    1. [With `plot()`](#Para3.1)
+    2. [Bar charts with `barplot()`](#Para3.2)
+    3. [Histograms with `hist()`](#Para3.3)
+    4. [Scatter Plots with `plot()`](#Para3.4)
 5. [Overlaying Plots](#Para4)
 6. [Descriptive Summary of packages](#Para5)
+    1. [Using `summary()`](#Para5.1)
+    2. [Using `describe()`](#Para5.2)
 7. [Data Formats in R Programming Language](#Para6)
 8. [Factors](#Para7)
 9. [Entering Data](#Para8)
@@ -78,7 +84,7 @@ p_unload(httr tidyr) #To unload specific packages
 ```
 
 ## Plotting data <a name="Para3"></a>
-### With `plot()`
+### With `plot()` <a name="Para3.1"></a>
 * The basic most command is the `plot` command which is basic X-Y plotting.
 * `plot` command adapts to data types and the number of variables you are dealing with.
 * To get information about any method/variable `?<method/variable>`
@@ -153,7 +159,7 @@ plot(dnorm, -3, +3)      #Bell curve
         * Weak
     * Used for both quantitative variable
 
-### Bar charts with `barplot()`
+### Bar charts with `barplot()` <a name="Para3.2"></a>
 These are used with categorical variables
 ```
 For example:
@@ -169,7 +175,7 @@ plot(cylinders)
 * Before plotting the bar graph its essential to clean the data, this can be done by creating a seperate table.
 * `table()` creates a frequency table having 2 columns: a) one of frequency b) second of parameter passed to the function.
 
-### Histograms with `hist()`
+### Histograms with `hist()` <a name="Para3.3"></a>
 These are used with quantitative variables
 * Basic histograms
 ```
@@ -200,7 +206,7 @@ hist(iris$Petal.Width [iris$Species == "virginica"],
 * mfrow stands for "multi frame row" which is a parameter and is used to set the layout whose initial value is (1,1) i,e only one row and one column for showing graphs. Its good practice to set it to its default value towards the end of the script.
 * To set mfrow use `param(mfrow = c(3,1))` where `c()` is a vector creation function and `par()` is used to set graphical parameters.
 
-### Scatter Plots with `plot()`
+### Scatter Plots with `plot()` <a name="Para3.4"></a>
 
 * It is used to visualize assosciation between 2 quantitative variable
 
@@ -246,7 +252,7 @@ curve(dnorm(lynx, mean = mean(lynx), sd = sd(lynx)),
 The above code creates a histogram of number of lynx captured against its probability distribution. Also suggested number of bins = 14.
 
 ## Descriptive Summary of packages <a name = "Para5"></a>
-### Using `summary()`
+### Using `summary()` <a name="5.1"></a>
 `summary()` gives min, max, median, 1st quartile, 3rd quartile and mean values for the parameter passed.
 
 ```
@@ -262,7 +268,7 @@ Eg:
 summary(iris)                   #Entire Data Frame
 ```
 
-### Using `describe()`
+### Using `describe()` <a name="Para5.2"></a>
 This function is present in the `pysch` package. To load and install psych package make use of `pacman`:
 ```
 For eg:
