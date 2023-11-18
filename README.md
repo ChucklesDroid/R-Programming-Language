@@ -10,6 +10,8 @@
 9. [Entering Data](#Para8)
 10. [Importing Data](#Para9)
 11. [Modelling Data](#Para10)
+    1. [Hierarchical Clustering](#Para11)
+    2. [Principal Components](#Para12)
 
 ## Motivation for Learning R <a name="Introduction"></a>
 This is to help with contributing to KEcoLab tool which helps in measuring Software Energy consumption.
@@ -387,7 +389,10 @@ r_csv = read.csv("/Path to csv file", header = TRUE)
 * `read.table()` gives an error on missing data but works on complete data.
 
 ## Modelling Data <a name="Para10"></a>
-### Hierarchical Clustering
+* It involves creating statistical models to represent and understand relationships within datasets.
+* These models can be used to make predictions, classify data points and gain insights into underlying patterns and trends in data.
+
+### Hierarchical Clustering <a name="Para11"></a>
 * In our use case we are keeping it simple and making use of:
     * Euclidean distance for measure of distance
     * Hierarichal Clustering using divisive method
@@ -425,3 +430,32 @@ rect.hclust(data, k = 5, border = "darkred")
 * Both Hierarchical and Set K( K means clusterring) are unsupervised machine learning algorithms that are used to group data points into clusters. However there are some key differences b/w the two.
 
 * Common measures of distance include euclidean distance.
+
+### Principal Components <a name="Para12"> </a>
+* Less is more
+* Less noise and fewer unhelpful variables in data = more meaning
+* Also known as dimesionality reduction
+* Steps involved:
+    1. Begin with 2 variables and plot their scatter plot
+    2. Draw a regression line on the plot(horizontal line across the graph)
+    3. Measure the perpendicular distance of each data point to the regression line
+    4. Collapse the data by sliding the points onto the regression line.
+    5. Optional rotation of the graph
+
+```
+For Example:
+# For entire Data frame
+pc <- prcomp(cars,
+            center = T,
+            scale = T)
+
+pc <- prcomp(~ mpg + cyl + disp + hp + wt + gsec + am + gear + carb)
+
+# Examining the Results
+pc  #This yeilds standard deviation and rotation values
+
+predict(pc) %>% round(2) #predict method makes prediction based on the statistical data and its then rounded off to nearest 2 decimals
+
+biplot(pc)  #It's a plot that aims to represent both observations and variables of a multivariate data on the same plot.
+
+```
